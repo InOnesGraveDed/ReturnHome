@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Metal_05_Material
+  m_Name: Building_3_Material
   m_Shader: {fileID: -6465566751694194690, guid: 2b3b7d0b179748b449e12721ea4fcfa6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_4450AB74:
-        m_Texture: {fileID: 1964017735491882486, guid: 14c8b4be39e99667c8ab0cf374b9296c, type: 3}
+        m_Texture: {fileID: 3643946747955521609, guid: 14c8b4be39e99667c8ab0cf374b9296c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -96,7 +96,7 @@ Material:
     - DeformMagnitude: 0
     - Vector1_21C41D02: 256
     - Vector1_6F288C5B: 0.5
-    - Vector1_B2CC132F: 26
+    - Vector1_B2CC132F: 16
     - Vector1_B9994903: 11
     - Vector1_E8746023: 16
     - _AddPrecomputedVelocity: 0
