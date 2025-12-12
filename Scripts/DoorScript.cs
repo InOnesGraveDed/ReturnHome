@@ -1,28 +1,30 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class DoorScript : MonoBehaviour
 {
-    public Transform door_transform;
-    public Transform key;
-    public bool is_key_picked = false;
+    public string targetSceneName;
+    public Animator animator;
 
-    bool player_in_area = false;
+    public float dimDuration = 2f;
+    public CanvasGroup dimPanel;
 
-    void Update()
+    void Awake()
     {
-        is_key_picked = !key.gameObject.activeSelf;
-        if (Input.GetKeyDown(KeyCode.F) && is_key_picked)
-        {
-            door_transform.position += new Vector3(0f, 100f, 0f);
-        }
+        animator = GameObject.Find("dimPanel").GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter(Collider c)
+    public void ExitAlimentara()
     {
-        if (c.tag == "Player")
-        {
-            player_in_area = true;
-        }
+        StartCoroutine(DimScreen(true));
+    }
+
+    private IEnumerator DimScreen(bool dimIn)
+    {
+        animator.SetTrigger("Trigger");
+        yield return new WaitForSeconds(dimDuration);
+        SceneManager.LoadScene(targetSceneName);
     }
 
 }

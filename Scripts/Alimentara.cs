@@ -27,22 +27,6 @@ public class Alimentara : MonoBehaviour
         }
     }
 
-    // private IEnumerator TransitionScene()
-    // {
-    // Dim screen
-    // yield return StartCoroutine(DimScreen(true));
-
-    // Store player position relative to this trigger
-    // Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-    // PlayerPrefs.SetFloat("PlayerX", playerPos.x + playerSpawnOffset.x);
-    // PlayerPrefs.SetFloat("PlayerY", playerPos.y + playerSpawnOffset.y);
-    // PlayerPrefs.SetFloat("PlayerZ", playerPos.z + playerSpawnOffset.z);
-    // PlayerPrefs.SetString("LastScene", SceneManager.GetActiveScene().name);
-
-    // Load target scene
-    //     SceneManager.LoadScene(targetSceneName);
-    // }
-
     private IEnumerator DimScreen(bool dimIn)
     {
         animator.SetTrigger("Trigger");

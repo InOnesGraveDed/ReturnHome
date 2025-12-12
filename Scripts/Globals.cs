@@ -2,15 +2,25 @@ using UnityEngine;
 
 public class Globals : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public static Transform spawnpoint;
+
+    bool is_first_load = true;
     void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);
+        GlobalsCheck();
     }
 
-    // Update is called once per frame
-    void Update()
+    void GlobalsCheck()
     {
-        
+        if (is_first_load == true)
+        {
+            is_first_load = false;
+            spawnpoint = GameObject.Find("MainSpawnpoint").GetComponent<Transform>();
+        }
+        else
+        {
+            spawnpoint = GameObject.Find("ShopExitPoint").GetComponent<Transform>();
+        }
     }
 }
