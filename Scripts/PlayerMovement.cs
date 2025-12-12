@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool is_grounded;
 
+    void Start()
+    {
+        transform = Globals.spawnpoint;
+    }
+
     void Update()
     {
         is_grounded = Physics.CheckSphere(ground_check.position, ground_distance, ground_mask);

@@ -2,10 +2,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class DoorScript : MonoBehaviour
+public class Alimentara : MonoBehaviour
 {
     public string targetSceneName;
+    public GameObject playerSpawn;
     public Animator animator;
+    // public Globals globals;
 
     public float dimDuration = 2f;
     public CanvasGroup dimPanel;
@@ -15,9 +17,14 @@ public class DoorScript : MonoBehaviour
         animator = GameObject.Find("dimPanel").GetComponent<Animator>();
     }
 
-    public void ExitAlimentara()
+    private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(DimScreen(true));
+        if (other.CompareTag("Player"))
+        {
+            // StartCoroutine(TransitionScene());
+            StartCoroutine(DimScreen(true));
+            // SceneManager.LoadScene(targetSceneName);
+        }
     }
 
     private IEnumerator DimScreen(bool dimIn)
@@ -26,5 +33,4 @@ public class DoorScript : MonoBehaviour
         yield return new WaitForSeconds(dimDuration);
         SceneManager.LoadScene(targetSceneName);
     }
-
 }
